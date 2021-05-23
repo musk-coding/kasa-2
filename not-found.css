@@ -1,0 +1,49 @@
+.not-found {
+  text-align: center;
+  margin-top: 50px;
+  color: var(--main-red);
+}
+
+.not-found h1 {
+  font-size: 288px;
+  font-weight: 700px;
+  margin-bottom: 66px;
+}
+
+.not-found p {
+  font-size: 36px;
+  font-weight: 500px;
+  margin-bottom: 182px;
+}
+
+.not-found a {
+  font-size: 18px;
+  font-weight: 500px;
+  color: var(--main-red);
+}
+
+/* Iphone 8 */
+/* @media only screen and (device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) { */
+@media (max-width: 650px) {
+  .not-found {
+    margin-top: 50px;
+  }
+
+  .not-found h1 {
+    font-size: 96px;
+    font-weight: 700px;
+    margin-bottom: 11px;
+  }
+
+  .not-found p {
+    font-size: 18px;
+    font-weight: 500px;
+    margin-bottom: 133px;
+  }
+
+  .not-found a {
+    font-size: 14px;
+    font-weight: 500px;
+    color: var(--main-red);
+  }
+}

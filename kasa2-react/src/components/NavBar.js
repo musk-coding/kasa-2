@@ -9,6 +9,7 @@ const Nav = styled.nav`
   font-size: 1.5rem;
   font-weight: 500;
   margin-top: 15px;
+  height: 100px;
 `;
 
 const Ul = styled.ul`

@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import StyledNavLink from "./StyledNavLink";
+import { StyledNavLink } from "./";
 
 const Nav = styled.nav`
   display: flex;
@@ -26,7 +26,9 @@ export default function NavBar() {
   return (
     <>
       <Nav>
-        <img className="logo" src="svg/logo.svg" alt="logo" />
+        <StyledNavLink to="/">
+          <img className="logo" src="svg/logo.svg" alt="logo" />
+        </StyledNavLink>
         <Ul>
           <Li>
             <StyledNavLink to="/">Accueil</StyledNavLink>

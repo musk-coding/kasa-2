@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { getRents } from "../services/data.service";
-import Thumb from "./Thumb";
+import { getRents } from "../services/rents.service";
+import { Thumb } from "./";
+import Colors from "../shared/constants";
 
 const Main = styled.main`
-  background-color: var(--main-grey);
+  background-color: ${Colors.GREY};
   margin-top: 25px;
   border-radius: 25px;
   padding: 56px 50px;

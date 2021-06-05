@@ -11,27 +11,27 @@ const H3 = styled.h3`
   width: 100px;
 `;
 
-function Thumb({ title, imgUrl }) {
-  const StyledThumb = styled.div`
-    position: relative;
-    height: 100%;
-    width: 100%;
-    border-radius: 10px;
-    background-image: linear-gradient(
-        180deg,
-        rgba(255, 255, 255, 0) 0%,
-        rgba(0, 0, 0, 0.5) 100%
-      ),
-      url(${imgUrl});
-    background-size: cover;
-    &:hover {
-      background-image: url(${imgUrl});
-      cursor: pointer;
-    }
-  `;
+const StyledThumb = styled.div`
+  position: relative;
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+  background-image: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(0, 0, 0, 0.5) 100%
+    ),
+    url(${(props) => props.imgUrl});
+  background-size: cover;
+  &:hover {
+    background-image: url(${(props) => props.imgUrl});
+    cursor: pointer;
+  }
+`;
 
+function Thumb({ title, imgUrl }) {
   return (
-    <StyledThumb>
+    <StyledThumb imgUrl={imgUrl}>
       <H3 className="thumb-title">{title}</H3>
     </StyledThumb>
   );

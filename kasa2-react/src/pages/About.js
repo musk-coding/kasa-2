@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Banner from "../components/Banner";
-import Accordion from "../components/Accordion";
+import { Accordion, Banner } from "../components";
 
 const AboutSection = styled.div`
   min-height: calc(100vh - 300px);

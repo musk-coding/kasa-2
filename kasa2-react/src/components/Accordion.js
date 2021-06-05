@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import Colors from "../shared/constants";
 
 const AccordionPanel = styled.div`
   position: relative;
@@ -15,7 +16,7 @@ const AccordionHeader = styled.div`
   font-size: 1.12rem;
   height: 52px;
   border-radius: 10px;
-  background-color: var(--main-red);
+  background-color: ${Colors.RED};
   padding: 13px 20px;
   color: #fff;
   cursor: pointer;
@@ -26,12 +27,12 @@ const AccordionContent = styled.div`
   position: relative;
   top: -15px;
   z-index: -1;
-  background-color: var(--main-grey);
+  background-color: ${Colors.GREY};
   padding: 40px 12px 27px 20px;
   border-radius: 10px;
   font-size: 1.12rem;
   line-height: 34px;
-  color: var(--main-red);
+  color: ${Colors.RED};
 `;
 
 // const Ul = styled.ul`
@@ -49,7 +50,7 @@ const Toggler = styled.img.attrs((props) => ({
 
 // transform: ${(props) => (props.open ? "rotateZ(180deg)" : "rotateZ(0deg)")};
 
-function Accordion({ title, text }) {
+export default function Accordion({ title, text }) {
   const [open, setOpen] = useState(false);
 
   const toggle = () => {
@@ -79,8 +80,6 @@ function Accordion({ title, text }) {
     </AccordionPanel>
   );
 }
-
-export default Accordion;
 
 // .accordion {
 //     position: relative;

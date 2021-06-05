@@ -18,9 +18,9 @@ const FooterImage = styled.img.attrs({
   margin-bottom: 30px;
 `;
 
-const P = styled.p`
-  font-size: 24px;
-`;
+// const P = styled.p`
+//   font-size: 24px;
+// `;
 
 function Footer() {
   return (

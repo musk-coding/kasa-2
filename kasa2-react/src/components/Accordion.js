@@ -1,24 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
-<div class="accordion">
-  <div class="accordion--header">
-    <h3>Équipements</h3>
-    <img src="svg/arrow_up.svg" alt="Back arrow" class="accordion--arrow" />
-  </div>
-  <div class="accordion--content">
-    <ul>
-      <li>Climatisation</li>
-      <li>Wi-Fi</li>
-      <li>Cuisine</li>
-      <li>Espace de travail</li>
-      <li>Fer à repasser</li>
-      <li>Sèche-cheveux</li>
-      <li>Cintres</li>
-    </ul>
-  </div>
-</div>;
-
 const AccordionPanel = styled.div`
   position: relative;
   font-family: "Montserrat", sans-serif;
@@ -47,9 +29,9 @@ const AccordionContent = styled.div`
   background-color: var(--main-grey);
   padding: 40px 12px 27px 20px;
   border-radius: 10px;
-  color: var(--main-red);
   font-size: 1.12rem;
   line-height: 34px;
+  color: var(--main-red);
 `;
 
 // const Ul = styled.ul`
@@ -57,25 +39,28 @@ const AccordionContent = styled.div`
 //   line-height: 25px;
 // `;
 
+const Toggler = styled.img.attrs((props) => ({
+  src: props.imgUrl,
+  alt: "Accordion toggler",
+}))`
+  ${(props) => (props.open ? "transform: rotateZ(180deg);" : "")}
+  transition: all 0.5s;
+`;
+
+// transform: ${(props) => (props.open ? "rotateZ(180deg)" : "rotateZ(0deg)")};
+
 function Accordion({ title, text }) {
   const [open, setOpen] = useState(false);
-  const [imgUrl, setImgUrl] = useState("svg/arrow_up.svg");
-
-  const Toggler = styled.img.attrs({
-    src: `${imgUrl}`,
-    alt: "Accordion toggler",
-  })``;
 
   const toggle = () => {
     setOpen((open) => !open);
-    setImgUrl(open ? "svg/arrow_up.svg" : "svg/arrow_down.svg");
   };
 
   return (
     <AccordionPanel>
       <AccordionHeader onClick={toggle}>
         <h3>{title}</h3>
-        <Toggler />
+        <Toggler open={open} imgUrl="svg/arrow.svg" />
       </AccordionHeader>
       {open && (
         <AccordionContent>

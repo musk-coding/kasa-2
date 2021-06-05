@@ -7,7 +7,7 @@ const H3 = styled.h3`
   position: absolute;
   bottom: 20px;
   left: 20px;
-  font-size: 1.12rem;
+  font-size: 0.8rem;
   width: 100px;
 `;
 

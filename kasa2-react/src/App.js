@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import About from "./pages/About";
 import Home from "./pages/Home";
 import Card from "./pages/Card";
+import NotFound from "./pages/NotFound";
 
 import { getRents } from "./services/data.service";
 
@@ -24,7 +25,7 @@ function App() {
       <header className="container">
         <NavBar />
       </header>
-      <div className="container">
+      <div className="container page">
         <Switch>
           <Route exact path="/">
             <Home />
@@ -32,6 +33,9 @@ function App() {
           <Route path="/card/:id" component={Card}></Route>
           <Route path="/about">
             <About />
+          </Route>
+          <Route path="*">
+            <NotFound />
           </Route>
         </Switch>
       </div>

@@ -10,33 +10,47 @@ const Main = styled.main`
   border-radius: 25px;
   padding: 56px 50px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, 250px);
   grid-gap: 50px 60px;
-  grid-auto-rows: 200px;
+  grid-auto-rows: 250px;
   place-content: center;
   min-width: 400px;
 `;
 
 function Gallery() {
+  const [error, setError] = useState(null);
+  const [isLoaded, setIsLoaded] = useState(false);
   const [rents, setRents] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
-      const rents = await (await getRents()).data["-Magcmd3knyXhPZ1CiDh"];
-      setRents(rents);
+      try {
+        const rents = await (await getRents()).data["-Magcmd3knyXhPZ1CiDh"];
+        setIsLoaded(true);
+        setRents(rents);
+      } catch (error) {
+        setIsLoaded(true);
+        setError(error);
+      }
     };
     fetchData();
   }, []);
 
-  return (
-    <Main>
-      {rents.map((rent, index) => (
-        <Link to={`/card/${rent.id}`} key={index}>
-          <Thumb title={rent.title} imgUrl={rent.cover} />
-        </Link>
-      ))}
-    </Main>
-  );
+  if (error) {
+    return <div>Error...</div>;
+  } else if (!isLoaded) {
+    return <div>Loading...</div>;
+  } else {
+    return (
+      <Main>
+        {rents.map((rent, index) => (
+          <Link to={`/card/${rent.id}`} key={index}>
+            <Thumb title={rent.title} imgUrl={rent.cover} />
+          </Link>
+        ))}
+      </Main>
+    );
+  }
 }
 
 export default Gallery;

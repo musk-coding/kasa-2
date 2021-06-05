@@ -22,10 +22,10 @@ const StyledBanner = styled.div`
   padding: 0 16px;
 `;
 
-function Banner({ text, imgUrl }) {
+function Banner({ text = "", imgUrl }) {
   return (
     <StyledBanner imgUrl={imgUrl}>
-      <h1>{text && text}</h1>
+      <h1>{text}</h1>
     </StyledBanner>
   );
 }

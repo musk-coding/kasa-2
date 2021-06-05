@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { getRents } from "../services/rents.service";
-import { Thumb } from "./";
+import { Loader, Thumb } from "./";
 import Colors from "../shared/constants";
 
 const Main = styled.main`
@@ -40,7 +40,7 @@ function Gallery() {
   if (error) {
     return <div>Error...</div>;
   } else if (!isLoaded) {
-    return <div>Loading...</div>;
+    return <Loader />;
   } else {
     return (
       <Main>

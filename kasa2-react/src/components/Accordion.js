@@ -5,7 +5,6 @@ import Colors from "../shared/constants";
 const AccordionPanel = styled.div`
   position: relative;
   font-family: "Montserrat", sans-serif;
-  width: 80%;
   margin: 0 auto;
 `;
 
@@ -45,7 +44,7 @@ const Toggler = styled.img.attrs((props) => ({
   alt: "Accordion toggler",
 }))`
   ${(props) => (props.open ? "transform: rotateZ(180deg);" : "")}
-  transition: all 0.5s;
+  transition: all .2s cubic-bezier(.7,0,.3,1)
 `;
 
 // transform: ${(props) => (props.open ? "rotateZ(180deg)" : "rotateZ(0deg)")};

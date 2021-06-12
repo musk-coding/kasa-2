@@ -30,9 +30,15 @@ export default function About() {
     <AboutSection>
       <Banner imgUrl="img/mountains_banner.png" />
       <div style={{ height: "25px" }}></div>
-      {accordions.map((accordion, index) => (
-        <Accordion title={accordion.title} text={accordion.text} key={index} />
-      ))}
+      <div style={{ width: "80%", margin: "0 auto" }}>
+        {accordions.map((accordion, index) => (
+          <Accordion
+            title={accordion.title}
+            text={accordion.text}
+            key={index}
+          />
+        ))}
+      </div>
     </AboutSection>
   );
 }

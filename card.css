@@ -1,0 +1,50 @@
+* {
+  color: var(--main-red);
+}
+
+h1 {
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 50px;
+}
+
+h2 {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 25px;
+}
+
+.tags {
+  display: flex;
+}
+
+.tag {
+  text-align: center;
+  background-color: #ff6060;
+  color: #fff;
+  border-radius: 10px;
+  padding: 3px 22px 2px 22px;
+  font-family: "Montserrat", sans-serif;
+  margin-top: 23px;
+}
+
+.tag:not(:last-child) {
+  margin-right: 10px;
+}
+
+.host {
+  display: flex;
+  align-items: center;
+}
+
+.host--name {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 25px;
+  margin-right: 10px;
+}
+
+.host--portrait {
+  border-radius: 50%;
+  width: 64px;
+}

@@ -1,19 +1,20 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Loader } from "../components";
+import { getRentById } from "../services/rents.service";
 
 function Card() {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
+  const [rent, setRent] = useState({});
   const { id } = useParams();
-  // const [rents, setRents] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        // const rents = await (await getRents()).data["-Magcmd3knyXhPZ1CiDh"];
+        const rent = await getRentById(id);
+        setRent(rent);
         setIsLoaded(true);
-        // setRents(rents);
       } catch (error) {
         setIsLoaded(true);
         setError(error);
